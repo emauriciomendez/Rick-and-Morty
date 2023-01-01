@@ -1,0 +1,21 @@
+.boton{
+    color: rgb(243, 250, 244); 
+    background-color: Green; 
+    padding: 5px 15px;
+    margin: 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.0em;
+    width: 150px;
+
+
+}
+.boton:hover {
+    background-color: rgb(39, 217, 128); 
+    color: black;
+}
+.inp{
+    height: 32px;
+    border-radius: 5px;
+    font-size: 1.0em;
+}
