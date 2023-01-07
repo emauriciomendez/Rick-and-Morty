@@ -1,0 +1,13 @@
+.contenedor{
+    width: 60%;
+    background: #e9f8e8e6;
+    opacity: 0.9;
+    border: 1px solid gray;
+    border-radius: 20px;
+    margin: auto;
+    padding: 10px 20px;
+    box-shadow: 2px 2px 2px rgb(7, 91, 7);
+}
+.h1_st{
+    margin-top: 5px;
+}

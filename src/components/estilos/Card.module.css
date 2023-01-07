@@ -1,9 +1,9 @@
 .divCard{
-    border: 2px solid gray;
-    border-radius: 5px;
+    border: 2px solid #268726;
+    border-radius: 15px;
     width: 200px;
     height: 300px;
-    background-color: azure;
+    background-color: #e9f8e8ef;
     
     display: inline-block;
     margin: 5px 20px;
@@ -17,17 +17,20 @@
 }
 
 .className{
-    font-size: 1.0em;
-    padding: 0px;
-    margin: 0px;
+    font-size: 1.1em;
+    padding: 2px;
+    margin: 10px;
 }
 
 .classImg{
-    width: 100%;
+    width: 90%;
+    border-radius: 10px;
+   
+    box-shadow: 4px 4px 4px -1px rgb(113, 119, 113), 0px 4px 4px -1px rgb(113, 119, 113), 1px -1px 1px  rgb(135, 142, 135), -1px 1px 1px rgb(115, 119, 115)
 }
 .classBtn{
-    background-color: red;
-    margin: 5px;
-    border-radius: 4px;
+    background-color: rgb(250, 44, 44);
+    margin: 10px;
+    border-radius: 6px;
     float: right;
 }

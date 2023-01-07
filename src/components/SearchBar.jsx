@@ -1,5 +1,5 @@
-import React, { useState } from "react";
 import s from './estilos/SearchBar.module.css';
+import React, {useState} from "react";
 
 export default function SearchBar({onSearch}) {
          const [cardABuscar,setCardABuscar]=useState('')
@@ -12,22 +12,27 @@ export default function SearchBar({onSearch}) {
 
          function enviarInput(e) {
             e.preventDefault();
-            console.log(cardABuscar);
+            //console.log(cardABuscar);
             onSearch(cardABuscar);
          }
-   return (<form onSubmit={e=>{
+      
+         return (<form onSubmit={e=>{
                   e.preventDefault();
                   enviarInput(e)
                }} >
-               <div>
-                  <input   className={s.inp} 
-                           type='search' 
-                           onChange={(e)=>cambiosInput(e)}/>
-                  <input   type='submit'   
-                           value='agregar' 
-                           className={s.boton} />
+               <>
+                
+                  <div className={s.divS}>
+                     <input   className={s.inp} 
+                              type='search' 
+                              placeHolder='Buscar...'
+                              onChange={(e)=>cambiosInput(e)}/>
+                     <input   type='submit'   
+                              value='agregar' 
+                              className={s.boton} />
+                  </div>
                  {/* <button className={s.boton} onClick={()=>enviarInput()}>Agregar</button> */}
-               </div>
+               </>
             </form>
             );
             }
