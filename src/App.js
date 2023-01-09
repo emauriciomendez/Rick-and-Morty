@@ -5,13 +5,36 @@ import About from './components/About.jsx'
 import Cards from './components/Cards.jsx'
 import Detail from './components/Detail.jsx'
 import Nav from './components/Nav.jsx'
+import Form from './components/Form/Form';
 //import characters from './data.js' //, { Rick }
 //import {useState} from 'react'
-import { Route, Routes } from 'react-router-dom';
+import { Route, Routes , useLocation, useNavigate} from 'react-router-dom';
+
 
 function App () {
 
   const [characters,setCharacters]= React.useState([]);
+  const navigate = useNavigate();
+  const [access, setAccess] = React.useState(false);
+  const username = 'ejemplo@gmail.com';
+  const password = '1password';
+  const location=useLocation()
+
+function login(userData) {
+   if (userData.password === password && userData.username === username) {
+      setAccess(true);
+      navigate('/home');
+   }
+}
+const logout=()=>{
+  navigate('/');
+  setCharacters([]);
+}
+React.useEffect(() => {
+  !access && navigate('/');
+// eslint-disable-next-line react-hooks/exhaustive-deps
+}, [access]);
+  
   function onSearch(cardABuscar){
     //console.log('llego card a buscar '+ cardABuscar);
             fetch(`https://rickandmortyapi.com/api/character/${cardABuscar}`)
@@ -37,16 +60,18 @@ function App () {
 
   return (
     <div className='App' >
-      <div>
-        <Nav onSearch={onSearch} />
-        
-      </div>
       
+      <div>
+       {location.pathname !=='/'&&  <Nav onSearch={onSearch} logout={logout} />   }     
+      </div>      
       <Routes> 
+        <Route path='/' element={<Form login={login}/>}/>        
         <Route path='/home' element={<Cards  characters={characters} onClose={onClose}/> }  />        
         <Route path='/about' element={<About/> }  />
         <Route path='/detail/:id' element={<Detail/> }  />
       </Routes>
+      
+      
     </div>
   )
 }

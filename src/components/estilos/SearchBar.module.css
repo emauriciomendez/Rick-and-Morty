@@ -7,18 +7,42 @@
     cursor: pointer;
     font-size: 1.0em;
     width: 150px;
+    height: 35px;
 
 
 }
 .boton:hover {
-    background-color: rgb(39, 217, 128); 
+    background-color: #5dc45dfa; 
     color: black;
+    font-weight: bolder;
+    border: 2px solid green;
+}
+.boton1{
+    color: rgb(2, 39, 7); 
+    background-color: #bbf5bbfa; 
+    padding: 5px 15px;
+
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.0em;
+    width: 150px;
+    height: 35px;
+
+
+}
+.boton1:hover {
+    background-color: rgba(3, 47, 25, 0.443); 
+    color: rgb(243 143 143);
+    border: 3px solid rgb(243 143 143);
+    font-weight: bolder;
 }
 .inp{
     height: 32px;
     border-radius: 5px;
     font-size: 1.0em;
+    width: 100px;
 }
+
 .divS{
     display: inline-block;  
     /*opacity: 0.4;

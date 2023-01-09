@@ -1,6 +1,8 @@
 .container{
-    width: 90%;
+    width: 900px;
+    height: 450px;
     border: 2px solid green;
+    border-radius: 10px;
     background: url(./rick-morty-acido.jpg);
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -16,10 +18,13 @@
 }
 .imagen{
    
-    width: 95%;
-    margin: 10px;
+    width: 400px;
+    height: 400px;
+    margin: 20px;
     /* padding: 10px; */
+    border: 1px solid #767373;
     border-radius: 15px;
+    box-shadow: 5px 5px 10px black;
 }
 .boton{
     color: rgb(243, 250, 244); 

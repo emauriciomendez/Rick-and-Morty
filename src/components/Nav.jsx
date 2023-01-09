@@ -12,7 +12,7 @@ flex-direction: row-reverse;
 
 `
 
-export default function Nav({onSearch}){
+export default function Nav({onSearch, logout}){
     return (<div className={st.container}> 
                 <ul className={st.menu}>
                     <li>  <h2 className={st.h2}>Rick and Morty</h2></li>
@@ -20,7 +20,7 @@ export default function Nav({onSearch}){
                     <li ><NavLink to='/about' className={st.li_s}>About </NavLink></li>
                     <li>
                         <Nav1>           
-                           <SearchBar  onSearch={onSearch}  />
+                           <SearchBar  onSearch={onSearch} logout={logout} />
                         </Nav1>
                     </li>
                 </ul>
