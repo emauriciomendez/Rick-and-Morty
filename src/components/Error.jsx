@@ -1,13 +1,10 @@
 import React from "react";
-import './estilos/About.css'
 
 export default function Error(){
-    return(<div className="contenedor">
-             <h1 className="h1_st">Error </h1>
-            
-            <p>Creado por: <strong>Mauricio Mendez</strong>. </p>
-    </div>
-       
-        
+    return(
+        <div>
+            <h1>Error 404</h1>
+            <h2>Route not found</h2>
+        </div>
     )
 }
