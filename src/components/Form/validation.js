@@ -1,7 +1,7 @@
 const regexEmail=/[\w]+@[\w]+\.[\w]/
 //^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}/
 const regexPassword=/[\d\w]{6,10}/
-//^(?=.*?[a-z])(?=.*?[0-9]).{6,10}$/
+//image.png/
 
 export function validate(userData){
     let errors={};

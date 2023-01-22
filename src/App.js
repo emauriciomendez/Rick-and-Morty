@@ -25,6 +25,8 @@ function login(userData) {
    if (userData.password === password && userData.username === username) {
       setAccess(true);
       navigate('/home');
+   }else{
+    alert('usuario o contraseña incorrectas')
    }
 }
 const logout=()=>{
@@ -66,7 +68,7 @@ React.useEffect(() => {
        {location.pathname !=='/'&&  <Nav onSearch={onSearch} logout={logout} />   }     
       </div>      
       <Routes> 
-        <Route path='/' element={<Form login={login}/>}/>        
+        <Route exact path='/' element={<Form login={login}/>}/>        
         <Route path='/home' element={<Cards  characters={characters} onClose={onClose}/> }  />        
         <Route path='/about' element={<About/> }  />
         <Route path='/detail/:id' element={<Detail/> }  />
