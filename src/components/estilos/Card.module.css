@@ -1,8 +1,8 @@
 .divCard{
     border: 3px solid #268726;
     border-radius: 15px;
-    width: 240px;
-    height: 350px;
+    width: 260px;
+    height: 400px;
     background-color: #e9f8e8ef;
     
     display: inline-block;
@@ -33,4 +33,9 @@
     margin: 10px;
     border-radius: 6px;
     float: right;
+}
+.classFavorite{
+    margin: 10px;
+    
+    float: left;
 }
