@@ -23,7 +23,7 @@ export const deleteFavorite=(id)=>{
          payload: status
       }
  }
- export const olderCards= (id)=>{
+ export const orderCards= (id)=>{
       return{
          type: ORDER,
          payload: id

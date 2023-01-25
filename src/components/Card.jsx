@@ -8,7 +8,9 @@ import { connect } from "react-redux";
  function Card({id,name,species,gender,image,onClose,myFavorites, addFavorites,deleteFavorite}) {
   const [isFav,setIsFav]=React.useState(false)
   React.useEffect(() => {
-         myFavorites.forEach((fav) => {
+  // myFavorites.length>0 && 
+  //addFavorites({1})
+   myFavorites.forEach((fav) => {
             if (fav.id === id) {
                setIsFav(true);
             }
@@ -52,8 +54,8 @@ export function mapStateToProps(state){
 }
 /*const mapDispatchToProps=(dispatch)=>{
    return{
-      addFavorites: function(){ dispatch(addFavorites())}
-      deleteFavorite: function(){ dispatch(deleteFavorite())}
+      addFavorites: function(char){ dispatch(addFavorites(char))};
+      deleteFavorite: function(char){ dispatch(deleteFavorite(char))};
       
    }
 
