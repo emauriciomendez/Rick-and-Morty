@@ -1,0 +1,41 @@
+.divCard{
+    border: 3px solid #268726;
+    border-radius: 15px;
+    width: 260px;
+    height: 400px;
+    background-color: #e9f8e8ef;
+    
+    display: inline-block;
+    margin: 30px 20px;
+}
+.classH2{
+    font-size: 1em;
+    display: block;
+    font-weight: 100;
+    padding: 5px;
+    margin: 5px 10px;
+}
+
+.className{
+    font-size: 1.1em;
+    padding: 2px;
+    margin: 10px;
+}
+
+.classImg{
+    width: 90%;
+    border-radius: 10px;
+   
+    box-shadow: 4px 4px 4px -1px rgb(113, 119, 113), 0px 4px 4px -1px rgb(113, 119, 113), 1px -1px 1px  rgb(135, 142, 135), -1px 1px 1px rgb(115, 119, 115)
+}
+.classBtn{
+    background-color: rgb(250, 44, 44);
+    margin: 10px;
+    border-radius: 6px;
+    float: right;
+}
+.classFavorite{
+    margin: 10px;
+    
+    float: left;
+}
