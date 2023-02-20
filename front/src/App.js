@@ -41,7 +41,7 @@ React.useEffect(() => {
   
   function onSearch(cardABuscar){
     //console.log('llego card a buscar '+ cardABuscar);
-            fetch(`https://rickandmortyapi.com/api/character/${cardABuscar}`)
+            fetch(`http://localhost:3001/rickandmorty/character/${cardABuscar}`)
               .then((response) => response.json())
               .then((data) => {
                const existe= characters.filter(card=> card.id===data.id)

@@ -4,12 +4,12 @@ import st from './estilos/Detail.module.css';
 
 export default function Detail(){
     const { id } = useParams();
-    console.log(id+' iiiii')
+   // console.log(id+' iiiii')
     const navigate = useNavigate();
    const [character, setCharacter] = React.useState({});  
 
    React.useEffect(() => {
-        fetch(`https://rickandmortyapi.com/api/character/${id}`)
+        fetch(`http://localhost:3001/rickandmorty/detail/${id}`)
           .then((response) => response.json())
           .then((char) => {
            // console.log(char)
