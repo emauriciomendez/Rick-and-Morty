@@ -1,7 +1,12 @@
 const  favs  = require('../utils/favs');
 
 const getFavorite = (req, res) => {
-    res.status(200).json(favs)
+    try {
+         res.status(200).json(favs)
+    } catch (error) {
+        res.status(500).json({message: error.message})
+    }
+   
 }
 
 module.exports =  getFavorite 
