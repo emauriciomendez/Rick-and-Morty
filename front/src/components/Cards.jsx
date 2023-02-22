@@ -4,7 +4,7 @@ import Card from './Card.jsx';
 
 export default function Cards(props) {
    const { characters , onClose} = props;
-   console.log(characters)
+   //console.log(characters)
    return <div > <>{
     characters.map(elem => (
       <Card

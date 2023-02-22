@@ -4,33 +4,36 @@ export const ADD_FAVORITES='ADD_FAVORITES'
 export const DELETE_FAVORITE='DELETE_FAVORITE'
 export const   FILTER='FILTER'
 export const   ORDER='ORDER'
+export const   GET_FAVORITE='GET_FAVORITE'
 
 export const addFavorites=(charac)=>{
-   return function(dispatch){
-      axios(`http://localhost:3001/rickandmorty/fav`,charac)
-      .then(info=>info.data)
-      .then(data=>{
-         dispatch(
-            {
+   return async function(dispatch){
+      try {
+         const result= await axios.post(`http://localhost:3001/rickandmorty/fav`,charac);      
+         return dispatch({
                type: ADD_FAVORITES,
-               payload: data
-      } 
-         )
-
-      })
-   }
+               payload: result.data
+            });     
+      } catch (error) {
+         console.log(error);
+      }
+     
+   };
    
-}
+};
 export const deleteFavorite=(id)=>{
-   return function(dispatch){
-      axios.delete(`http://localhost:3001/rickandmorty/fav/${id}`)
-      .then(info=>info.data)
-      .then(data=>{
-         dispatch( {
+   return async function(dispatch){
+      try {
+         const result= await axios.delete(`http://localhost:3001/rickandmorty/fav/${id}`)
+         const dataDeleted=result.data
+         return dispatch( {
                type: DELETE_FAVORITE,
-               payload: id
+               payload: {id,
+                  dataDeleted}
              })
-      })
+      } catch (error) {
+         console.log(error);
+      }         
    }   
 }
    
@@ -46,3 +49,18 @@ export const deleteFavorite=(id)=>{
          payload: id
       }
  }
+
+ export const getFavorite= (id)=>{
+   return async function(dispatch){
+      try {
+         const result= await axios.get(`http://localhost:3001/rickandmorty/fav`)  
+          return dispatch( {
+            type: GET_FAVORITE,
+            payload: result.data
+          })
+      } catch (error) {
+         
+      }
+     
+   }
+}

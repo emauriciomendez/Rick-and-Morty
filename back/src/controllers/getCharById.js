@@ -6,7 +6,7 @@ const getCharById = async(req, res) => {
     const { id } = req.params;
         try {        
         const getCharFromApi = await axios(`${url}${id}`)     
-         const characterApi  =  getCharFromApi.data
+        const characterApi  =  getCharFromApi.data
             let character = {
                 id: characterApi.id,
                 image: characterApi.image,

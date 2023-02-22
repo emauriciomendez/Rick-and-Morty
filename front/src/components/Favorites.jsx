@@ -3,11 +3,14 @@ import {useNavigate} from 'react-router-dom'
 import {connect, useDispatch} from 'react-redux'
 import Card from './Card.jsx'
 import st from '../components/estilos/Favorites.module.css'
-import {orderCards, filterCards } from '../redux/actions.js'
+import {orderCards, filterCards, deleteFavorite } from '../redux/actions.js'
+
+
  export function Favorites({myFavorites}){
         const navigate= useNavigate(); 
         function backToHome(){ navigate ("/home")   }
         const dispatch=useDispatch();
+        
         function handleOrder(e){
            dispatch(orderCards(e.target.value))
         }

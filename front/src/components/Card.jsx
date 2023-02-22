@@ -6,7 +6,8 @@ import { connect } from "react-redux";
 
 
  function Card({id,name,species,gender,image,onClose,myFavorites, addFavorites,deleteFavorite}) {
-  const [isFav,setIsFav]=React.useState(false)
+  
+const [isFav,setIsFav]=React.useState(false)
   React.useEffect(() => {
   // myFavorites.length>0 && 
   //addFavorites({1})
@@ -17,15 +18,16 @@ import { connect } from "react-redux";
          });
       // eslint-disable-next-line react-hooks/exhaustive-deps
       }, [myFavorites]);
- const handleFavorite=()=>{
-   if(isFav){
-      setIsFav(false);
-      deleteFavorite(id)
-   }else{
-      setIsFav(true);
-      addFavorites({id,name,species,gender,image})
+
+   const handleFavorite=()=>{
+      if(isFav){
+         setIsFav(false);
+         deleteFavorite(id)
+      }else{
+         setIsFav(true);
+         addFavorites({id,name,species,gender,image})
+      }
    }
- }
    return (
      
          
@@ -52,6 +54,16 @@ export function mapStateToProps(state){
       myFavorites: state.myFavorites
    }
 }
+const mapDispatchToProps = (dispatch) => {
+   return {
+     addFavorites: function (character) {
+       dispatch(addFavorites(character))
+     },
+     removeFavorites: function (id) {
+       dispatch(deleteFavorite(id))
+     }
+   };
+ };
 /*const mapDispatchToProps=(dispatch)=>{
    return{
       addFavorites: function(char){ dispatch(addFavorites(char))};
@@ -60,4 +72,4 @@ export function mapStateToProps(state){
    }
 
 }*/
-export default connect(mapStateToProps, {addFavorites,deleteFavorite })(Card);
+export default connect(mapStateToProps,mapDispatchToProps)(Card);

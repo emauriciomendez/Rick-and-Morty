@@ -27,7 +27,7 @@ function login(userData) {
       setAccess(true);
       navigate('/home');
    }else{
-    alert('usuario o contraseña incorrectas')
+    alert('Usuario o contraseña incorrectas')
    }
 }
 const logout=()=>{

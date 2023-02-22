@@ -1,4 +1,4 @@
-const  favs  = require('../utils/favs');
+let  favs  = require('../utils/favs');
 
 const deleteFavorite = (req, res) => {
     const { id } = req.params;

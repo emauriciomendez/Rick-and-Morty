@@ -1,18 +1,20 @@
 /* eslint-disable array-callback-return */
-import {ADD_FAVORITES,DELETE_FAVORITE,FILTER,ORDER} from './actions.js'
+import {ADD_FAVORITES,DELETE_FAVORITE,FILTER,ORDER,GET_FAVORITE} from './actions.js'
 
 
 const initialState={
      myFavorites:[],
-    allCharacters: []}
+    allCharacters: []};
 
 export function reducer(state=initialState,actions){
     switch (actions.type){
         case ADD_FAVORITES:
                 return{
                     ...state,
-                    myFavorites:[...state.allCharacters, actions.payload],
-                    allCharacters: [...state.allCharacters, actions.payload]
+                    myFavorites: [...state.myFavorites, actions.payload],
+                    allCharacters: [...state.myFavorites, actions.payload],
+                    // myFavorites: actions.payload,
+                    // allCharacters:  actions.payload
                     //[...state.allCharacters, actions.payload]
                 }
                   
@@ -24,16 +26,15 @@ export function reducer(state=initialState,actions){
                     myFavorites: state.myFavorites.filter((char) => char.id !== actions.payload)
                 }
         case   FILTER:
-            console.log(state.allCharacters )
+           // console.log(state.allCharacters )
             const filteredChar= state.allCharacters.filter((char) => char.gender === actions.payload)
                 return{
                     ...state,
                     //allCharacters: state.allCharacters.filter((char) => char.gender !== actions.payload),
-                    myFavorites:filteredChar
+                    myFavorites:[...filteredChar] //filteredChar
                 }
        case  ORDER:
-                
-                    const orderChar =state.allCharacters.sort((a,b)=>{
+                     const orderChar =state.allCharacters.sort((a,b)=>{
                             if(actions.payload==="Ascendente"){
                                 if(a.id < b.id)  return -1
                                 if(a.id > b.id)  return 1;    
@@ -48,7 +49,12 @@ export function reducer(state=initialState,actions){
                         ...state,
                         myFavorites: [...orderChar]
                     }
-               
+        case GET_FAVORITE:
+            return{
+                ...state,
+                allCharacters: actions.payload,
+                myFavorites: actions.payload
+            }      
               
        
         default :   return {...state }

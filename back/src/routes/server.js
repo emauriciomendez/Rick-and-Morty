@@ -1,8 +1,7 @@
 const express = require('express');
-const { router } = require('../routes/index');
+const { router } = require('./index.js');
 const cors = require('cors')
 const PORT = 3001;
-
 const server = express();
 
 server.use(express.json());
