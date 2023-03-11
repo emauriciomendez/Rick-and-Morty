@@ -31,9 +31,9 @@
 
 }
 .boton1:hover {
-    background-color: rgba(3, 47, 25, 0.443); 
-    color: rgb(243 143 143);
-    border: 3px solid rgb(243 143 143);
+    background-color: rgba(3, 47, 25, 0.276); 
+    color: rgb(225, 52, 52);
+    border: 3px solid rgb(242, 52, 52);
     font-weight: bolder;
 }
 .inp{

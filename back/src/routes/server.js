@@ -1,7 +1,3 @@
-const express = require('express');
-const { router } = require('./index.js');
-const cors = require('cors')
-const PORT = 3001;
 const server = express();
 
 server.use(express.json());
@@ -15,14 +11,20 @@ server.use((req, res, next) => {
    next();
 });
 
-server.use('/', router);
+server.use('/rickandmorty', router);
 
-server.listen(PORT, () => {
-   console.log('Server raised in port ' + PORT);
-});
+// server.listen(PORT, () => {
+//    console.log('Server raised in port ' + PORT);
+// });
+
+sequelize.sync({force: true}).then(async () => {
+   await saveApiData();
+   server.listen(PORT, () => {
+      console.log('Server raised in port ' + PORT);
+   });
+})
 
 module.exports = { server };
-
 // <<<<<<<<<<<<<<<<<<<<<<<<<<<<promises>>>>>>>>>>>>>>>>>>>>>>>><
 //const http = require("http");
 

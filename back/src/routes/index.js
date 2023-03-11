@@ -1,17 +1,21 @@
 const { Router } = require("express");
 
-const getCharById = require('../controllers/getCharById.js');
-const getCharDetail = require('../controllers/getCharDetail.js');
-const getFavorite = require('../controllers/getFavorite.js');
-const postFavorite = require('../controllers/postFavorite.js');
-const deleteFavorite = require('../controllers/deleteFavorite.js');
+const getCharById = require('../controllers/getCharById');
+const getCharDetail = require('../controllers/getCharDetail');
+const getFavorite = require('../controllers/getFavorite');
+const postFavorite = require('../controllers/postFavorite');
+const deleteFavorite = require('../controllers/deleteFavorite');
+
+const getAllChars = require('../controllers/getAllChars');
 
 const router = Router();
 
-router.get("/rickandmorty/character/:id", getCharById);
-router.get( "/rickandmorty/detail/:id", getCharDetail);
-router.get('/rickandmorty/fav', getFavorite);
-router.post('/rickandmorty/fav', postFavorite);
-router.delete('/rickandmorty/fav/:id', deleteFavorite);
+router.get("/character/:id", getCharById);
+router.get( "/detail/:id", getCharDetail);
+router.get('/fav', getFavorite);
+router.post('/fav', postFavorite);
+router.delete('/fav/:id', deleteFavorite);
+
+router.get('/allCharacters', getAllChars);
 
 module.exports = { router }
